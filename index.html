@@ -13,6 +13,7 @@
         
         <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
             <button class="btn btn-primary" onclick="switchTab('create')">Create Exam</button>
+            <button class="btn btn-outline" onclick="switchTab('manage')">Manage Exams</button>
             <button class="btn btn-outline" onclick="switchTab('monitor')">Live Monitor</button>
         </div>
 
@@ -53,6 +54,11 @@
             </div>
         </div>
 
+        <div id="tab-manage" class="hidden">
+            <h2>Manage Exams</h2>
+            <div id="exam-list-manage"></div>
+        </div>
+
         <div id="tab-monitor" class="hidden">
             <select id="exam-select" style="padding:10px; width:100%; margin-bottom:20px;">
                 <option value="">-- Select Exam to Monitor --</option>
@@ -80,9 +86,18 @@
     <script>
         function switchTab(t) {
             document.getElementById('tab-create').classList.add('hidden');
+            document.getElementById('tab-manage').classList.add('hidden');
             document.getElementById('tab-monitor').classList.add('hidden');
             document.getElementById('tab-'+t).classList.remove('hidden');
+            if(t === 'manage' && window.loadManageExams) window.loadManageExams();
         }
+        
+        // Load manage exams when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if(window.loadManageExams) window.loadManageExams();
+            }, 1000);
+        });
     </script>
     <script type="module" src="admin.js"></script>
 </body>
