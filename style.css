@@ -1,38 +1,269 @@
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
 :root {
-    --primary: #0F9D58; --dark: #202124; --light: #ffffff;
-    --bg: #f8f9fa; --danger: #d93025; --warning: #f4b400; --info: #1a73e8;
+    --primary: #1a73e8;       /* Google Blue */
+    --primary-hover: #1557b0;
+    --bg-body: #f0f2f5;       /* Light Gray Background */
+    --bg-card: #ffffff;
+    --text-main: #202124;
+    --text-muted: #5f6368;
+    --border: #dadce0;
+    --danger: #d93025;
+    --success: #1e8e3e;
+    --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    --radius: 8px;
 }
 
-* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
-body { background: var(--bg); color: var(--dark); }
-.hidden { display: none !important; }
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-.btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; color: white; transition:0.3s; }
-.btn-primary { background: var(--primary); }
-.btn-danger { background: var(--danger); }
-.btn-info { background: var(--info); }
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-/* Tables (New) */
-table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-th { background: var(--dark); color: white; }
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 20px;
+}
 
-/* Status Badges (New) */
-.badge { padding: 5px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; color: white; }
-.bg-green { background: var(--primary); } /* Completed */
-.bg-yellow { background: var(--warning); color: black; } /* Taking Exam */
-.bg-red { background: var(--danger); } /* Disqualified */
+/* =========================================
+   2. LAYOUT & CONTAINER
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
 
-/* Forms & Cards */
-.card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
-.row { display: flex; gap: 20px; }
-.col { flex: 1; }
+h1 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
 
-/* Student Exam UI */
-.exam-mode { user-select: none; }
-.exam-header { background: var(--dark); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
-.q-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
-.q-btn { padding: 10px; border: 1px solid #ccc; background: white; cursor: pointer; }
-.q-btn.active { border-color: var(--primary); border-width: 2px; }
-.q-btn.done { background: var(--primary); color: white; }
+h2 {
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--bg-body);
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   3. BUTTONS & NAVIGATION
+   ========================================= */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 2px 4px rgba(26, 115, 232, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
+}
+
+.btn-outline {
+    background-color: white;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.btn-outline:hover {
+    background-color: #f8f9fa;
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+/* Tab Navigation Wrapper */
+div[style*="margin-bottom: 20px"] {
+    display: flex;
+    gap: 15px;
+}
+
+/* =========================================
+   4. FORMS & INPUTS
+   ========================================= */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    margin-top: 15px;
+    display: block;
+}
+
+/* First label shouldn't have top margin */
+label:first-of-type {
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: var(--text-main);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+textarea {
+    font-family: 'Consolas', 'Monaco', monospace; /* Monospace for JSON editing */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    background-color: #fafafa;
+}
+
+/* Helper text for JSON */
+p {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   5. TABLES (MONITORING)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: white;
+}
+
+thead {
+    background-color: #f8f9fa;
+}
+
+th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f1f3f4;
+    color: var(--text-main);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #f8f9fa;
+}
+
+/* =========================================
+   6. RESPONSIVE ADJUSTMENTS
+   ========================================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    /* Stack flex rows on mobile */
+    .row[style*="display:flex"] {
+        flex-direction: column;
+        gap: 0 !important;
+    }
+
+    /* Stack monitor columns */
+    #tab-monitor > div[style*="display:flex"] {
+        flex-direction: column;
+    }
+    
+    div[style*="flex:1"] {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   7. UTILITY CLASSES (Status Badges)
+   ========================================= */
+/* These are used by the JS to color status in the tables */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bg-green {
+    background-color: #e6f4ea;
+    color: #137333;
+}
+
+.bg-yellow {
+    background-color: #fef7e0;
+    color: #b06000;
+}
+
+.bg-red {
+    background-color: #fce8e6;
+    color: #c5221f;
+}

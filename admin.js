@@ -1,7 +1,7 @@
 import { db } from './config.js';
-import { collection, addDoc, getDocs, query, where, onSnapshot, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { collection, addDoc, getDocs, query, where, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// --- CREATE EXAM ---
+// CREATE EXAM
 document.getElementById('create-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('button');
@@ -11,84 +11,79 @@ document.getElementById('create-form').addEventListener('submit', async (e) => {
         const questions = JSON.parse(document.getElementById('json-input').value);
         await addDoc(collection(db, "tests"), {
             title: document.getElementById('title').value,
-            startTime: document.getElementById('startTime').value, // ISO String
-            endTime: document.getElementById('endTime').value,     // ISO String
+            startTime: document.getElementById('startTime').value,
+            endTime: document.getElementById('endTime').value,
             duration: parseInt(document.getElementById('duration').value),
             attemptsAllowed: parseInt(document.getElementById('attempts').value),
             questions: questions,
-            createdAt: new Date().toISOString()
+            createdAt: new Date().toISOString(),
+            expiryDate: document.getElementById('expiryDate').value || null,
+            disabled: document.getElementById('disabled').checked
         });
-        alert("Exam Published!");
+        alert("Exam Published Successfully!");
         e.target.reset();
-        loadExamDropdown(); // Refresh dropdown
+        loadExamDropdown();
     } catch(err) {
-        alert("Error: " + err.message);
+        alert("JSON/Database Error: " + err.message);
     }
     btn.disabled = false; btn.innerText = "Publish Exam";
 });
 
-// --- MONITORING ---
+// MONITORING
 const examSelect = document.getElementById('exam-select');
-let unsubscribeLive = null;
-let unsubscribeRanks = null;
+let unsubLive = null;
+let unsubRank = null;
 
 async function loadExamDropdown() {
     const snap = await getDocs(collection(db, "tests"));
-    examSelect.innerHTML = '<option value="">-- Choose Active Exam --</option>';
-    snap.forEach(doc => {
-        const d = doc.data();
+    examSelect.innerHTML = '<option value="">-- Select Exam --</option>';
+    snap.forEach(d => {
         const opt = document.createElement('option');
-        opt.value = doc.id;
-        opt.innerText = d.title;
+        opt.value = d.id;
+        opt.innerText = d.data().title;
         examSelect.appendChild(opt);
     });
 }
 loadExamDropdown();
 
 examSelect.addEventListener('change', (e) => {
-    const testId = e.target.value;
-    if (!testId) return;
+    const tid = e.target.value;
+    if(!tid) return;
 
-    // 1. Listen for LIVE STATUS (Students currently taking it)
-    if (unsubscribeLive) unsubscribeLive();
-    const qLive = query(collection(db, "live_status"), where("testId", "==", testId));
-    
-    unsubscribeLive = onSnapshot(qLive, (snap) => {
+    // 1. Live Status
+    if(unsubLive) unsubLive();
+    const qLive = query(collection(db, "live_status"), where("testId", "==", tid));
+    unsubLive = onSnapshot(qLive, (snap) => {
         const tbody = document.getElementById('live-table');
         tbody.innerHTML = '';
         snap.forEach(doc => {
             const d = doc.data();
-            let badgeClass = 'bg-yellow';
-            if (d.status === 'Completed') badgeClass = 'bg-green';
-            if (d.status === 'Disqualified') badgeClass = 'bg-red';
+            const timeDiff = (new Date() - new Date(d.lastActive)) / 1000;
+            let status = d.status;
+            let badge = 'bg-yellow';
             
-            tbody.innerHTML += `
-                <tr>
-                    <td>${d.name || 'Student'}</td>
-                    <td><span class="badge ${badgeClass}">${d.status}</span></td>
-                    <td>${new Date(d.lastActive).toLocaleTimeString()}</td>
-                </tr>
-            `;
+            if(d.status === 'Completed') badge = 'bg-green';
+            else if(timeDiff > 60 && d.status !== 'Completed') { status = "Offline"; badge = 'bg-red'; }
+            
+            tbody.innerHTML += `<tr><td>${d.name}</td><td><span class="badge ${badge}">${status}</span></td><td>${new Date(d.lastActive).toLocaleTimeString()}</td></tr>`;
         });
     });
 
-    // 2. Listen for RESULTS (Leaderboard)
-    if (unsubscribeRanks) unsubscribeRanks();
-    const qRanks = query(collection(db, "results"), where("testId", "==", testId), orderBy("score", "desc"));
+    // 2. Leaderboard (Client-Side Sorting to fix Index Error)
+    if(unsubRank) unsubRank();
+    const qRank = query(collection(db, "results"), where("testId", "==", tid));
+    
+    unsubRank = onSnapshot(qRank, (snap) => {
+        let results = [];
+        snap.forEach(doc => results.push(doc.data()));
+        
+        // Sort DESC by score
+        results.sort((a, b) => b.score - a.score);
 
-    unsubscribeRanks = onSnapshot(qRanks, (snap) => {
         const tbody = document.getElementById('rank-table');
         tbody.innerHTML = '';
-        let rank = 1;
-        snap.forEach(doc => {
-            const d = doc.data();
-            tbody.innerHTML += `
-                <tr>
-                    <td>#${rank++}</td>
-                    <td>${d.email}</td>
-                    <td><strong>${d.score}</strong></td>
-                </tr>
-            `;
+        results.forEach((r, i) => {
+            tbody.innerHTML += `<tr><td>#${i+1}</td><td>${r.email}</td><td><strong>${r.score}</strong></td></tr>`;
         });
     });
 });

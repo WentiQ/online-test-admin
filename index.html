@@ -2,77 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin - Live Monitor</title>
+    <title>Admin - JEE Advanced Portal</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Admin Control & Monitor</h1>
+        <h1>Admin Control Center</h1>
         
-        <div style="margin-bottom: 20px;">
-            <button class="btn btn-info" onclick="switchTab('create')">Create Exam</button>
-            <button class="btn btn-primary" onclick="switchTab('monitor')">Live Monitor & Ranks</button>
+        <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+            <button class="btn btn-primary" onclick="switchTab('create')">Create Exam</button>
+            <button class="btn btn-outline" onclick="switchTab('monitor')">Live Monitor</button>
         </div>
 
-        <div id="tab-create" class="card">
-            <h2>Create New Assessment</h2>
-            <form id="create-form">
-                <label>Exam Title</label>
-                <input type="text" id="title" placeholder="e.g. JEE Mains Mock 1" required>
-                
-                <div class="row">
-                    <div class="col">
-                        <label>Start Time (Open)</label>
-                        <input type="datetime-local" id="startTime" required>
+        <div id="tab-create">
+            <div class="question-card">
+                <h2>Create Assessment</h2>
+                <form id="create-form">
+                    <label>Exam Title</label>
+                    <input type="text" id="title" placeholder="e.g. JEE Advanced Paper 1" required>
+                    
+                    <div class="row" style="display:flex; gap:20px;">
+                        <div style="flex:1"><label>Start Time</label><input type="datetime-local" id="startTime" required></div>
+                        <div style="flex:1"><label>End Time</label><input type="datetime-local" id="endTime" required></div>
                     </div>
-                    <div class="col">
-                        <label>End Time (Close)</label>
-                        <input type="datetime-local" id="endTime" required>
+                    <div class="row" style="display:flex; gap:20px;">
+                        <div style="flex:1"><label>Duration (Min)</label><input type="number" id="duration" value="180" required></div>
+                        <div style="flex:1"><label>Attempts</label><input type="number" id="attempts" value="1"></div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label>Duration (Minutes)</label>
-                        <input type="number" id="duration" value="60" required>
+                    <div class="row" style="display:flex; gap:20px;">
+                        <div style="flex:1">
+                            <label>Expiry Date (optional)</label>
+                            <input type="datetime-local" id="expiryDate">
+                        </div>
+                        <div style="flex:1; display:flex; align-items:end;">
+                            <label style="margin-right:10px;">Disable Exam</label>
+                            <input type="checkbox" id="disabled" style="width:20px; height:20px;">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label>Settings</label>
-                        <select id="attempts">
-                            <option value="1">Single Attempt Only</option>
-                            <option value="999">Unlimited Attempts</option>
-                        </select>
-                    </div>
-                </div>
 
-                <label>Questions JSON</label>
-                <textarea id="json-input" rows="10" placeholder='[{"type":"MCQ","text":"...","options":[...],"correct":0}]'></textarea>
-                
-                <button type="submit" class="btn btn-primary">Publish Exam</button>
-            </form>
+                    <label>Question Data (JSON)</label>
+                    <p style="font-size:0.8rem; color:var(--gray);">
+                        Supports: Images ("img"), LaTeX Math ("\( x^2 \)"), Explanations ("explanation"), Custom Marks ("pos", "neg").
+                    </p>
+                    <textarea id="json-input" rows="10" placeholder='Paste JSON here...'></textarea>
+                    <button type="submit" class="btn btn-primary" style="margin-top:10px; width:100%;">Publish Exam</button>
+                </form>
+            </div>
         </div>
 
         <div id="tab-monitor" class="hidden">
-            <div class="card">
-                <label>Select Exam to Monitor:</label>
-                <select id="exam-select">
-                    <option value="">-- Choose Active Exam --</option>
-                </select>
-            </div>
+            <select id="exam-select" style="padding:10px; width:100%; margin-bottom:20px;">
+                <option value="">-- Select Exam to Monitor --</option>
+            </select>
 
-            <div class="row">
-                <div class="col">
-                    <h3>Live Student Status</h3>
+            <div style="display:flex; gap:20px;">
+                <div style="flex:1">
+                    <h3>Live Status</h3>
                     <table>
-                        <thead><tr><th>Name</th><th>Status</th><th>Last Active</th></tr></thead>
+                        <thead><tr><th>Student</th><th>Status</th><th>Last Active</th></tr></thead>
                         <tbody id="live-table"></tbody>
                     </table>
                 </div>
-
-                <div class="col">
-                    <h3>Leaderboard (Submitted)</h3>
+                <div style="flex:1">
+                    <h3>Leaderboard</h3>
                     <table>
-                        <thead><tr><th>Rank</th><th>Name</th><th>Score</th></tr></thead>
+                        <thead><tr><th>Rank</th><th>Student</th><th>Score</th></tr></thead>
                         <tbody id="rank-table"></tbody>
                     </table>
                 </div>
@@ -81,10 +78,10 @@
     </div>
 
     <script>
-        function switchTab(tab) {
+        function switchTab(t) {
             document.getElementById('tab-create').classList.add('hidden');
             document.getElementById('tab-monitor').classList.add('hidden');
-            document.getElementById('tab-' + tab).classList.remove('hidden');
+            document.getElementById('tab-'+t).classList.remove('hidden');
         }
     </script>
     <script type="module" src="admin.js"></script>
