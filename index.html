@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Live Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Control & Monitor</h1>
+        
+        <div style="margin-bottom: 20px;">
+            <button class="btn btn-info" onclick="switchTab('create')">Create Exam</button>
+            <button class="btn btn-primary" onclick="switchTab('monitor')">Live Monitor & Ranks</button>
+        </div>
+
+        <div id="tab-create" class="card">
+            <h2>Create New Assessment</h2>
+            <form id="create-form">
+                <label>Exam Title</label>
+                <input type="text" id="title" placeholder="e.g. JEE Mains Mock 1" required>
+                
+                <div class="row">
+                    <div class="col">
+                        <label>Start Time (Open)</label>
+                        <input type="datetime-local" id="startTime" required>
+                    </div>
+                    <div class="col">
+                        <label>End Time (Close)</label>
+                        <input type="datetime-local" id="endTime" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Duration (Minutes)</label>
+                        <input type="number" id="duration" value="60" required>
+                    </div>
+                    <div class="col">
+                        <label>Settings</label>
+                        <select id="attempts">
+                            <option value="1">Single Attempt Only</option>
+                            <option value="999">Unlimited Attempts</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label>Questions JSON</label>
+                <textarea id="json-input" rows="10" placeholder='[{"type":"MCQ","text":"...","options":[...],"correct":0}]'></textarea>
+                
+                <button type="submit" class="btn btn-primary">Publish Exam</button>
+            </form>
+        </div>
+
+        <div id="tab-monitor" class="hidden">
+            <div class="card">
+                <label>Select Exam to Monitor:</label>
+                <select id="exam-select">
+                    <option value="">-- Choose Active Exam --</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h3>Live Student Status</h3>
+                    <table>
+                        <thead><tr><th>Name</th><th>Status</th><th>Last Active</th></tr></thead>
+                        <tbody id="live-table"></tbody>
+                    </table>
+                </div>
+
+                <div class="col">
+                    <h3>Leaderboard (Submitted)</h3>
+                    <table>
+                        <thead><tr><th>Rank</th><th>Name</th><th>Score</th></tr></thead>
+                        <tbody id="rank-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            document.getElementById('tab-create').classList.add('hidden');
+            document.getElementById('tab-monitor').classList.add('hidden');
+            document.getElementById('tab-' + tab).classList.remove('hidden');
+        }
+    </script>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+:root {
+    --primary: #0F9D58; --dark: #202124; --light: #ffffff;
+    --bg: #f8f9fa; --danger: #d93025; --warning: #f4b400; --info: #1a73e8;
+}
+
+* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--dark); }
+.hidden { display: none !important; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; color: white; transition:0.3s; }
+.btn-primary { background: var(--primary); }
+.btn-danger { background: var(--danger); }
+.btn-info { background: var(--info); }
+
+/* Tables (New) */
+table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background: var(--dark); color: white; }
+
+/* Status Badges (New) */
+.badge { padding: 5px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: bold; color: white; }
+.bg-green { background: var(--primary); } /* Completed */
+.bg-yellow { background: var(--warning); color: black; } /* Taking Exam */
+.bg-red { background: var(--danger); } /* Disqualified */
+
+/* Forms & Cards */
+.card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
+.row { display: flex; gap: 20px; }
+.col { flex: 1; }
+
+/* Student Exam UI */
+.exam-mode { user-select: none; }
+.exam-header { background: var(--dark); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+.q-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+.q-btn { padding: 10px; border: 1px solid #ccc; background: white; cursor: pointer; }
+.q-btn.active { border-color: var(--primary); border-width: 2px; }
+.q-btn.done { background: var(--primary); color: white; }
