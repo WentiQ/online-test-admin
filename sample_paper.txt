@@ -57,7 +57,7 @@
           "type": "single",
           "question": "Sunil is the son of Anil. Shweta, Anil's sister, has a son Maruti and daughter Sita. Prem is the maternal uncle of Maruti. How is Prem related to Sunil?",
           "options": ["Cousin", "Paternal Uncle", "Brother", "Nephew"],
-          "answer": 0,
+          "answer": 2,
           "marks": 4,
           "negativeMarks": 0
         }
@@ -89,7 +89,7 @@
             "Our government and scientists are trying to find out... after some years we will get better understanding about what changes we should bring so that people can be happy.",
             "There's no use in thinking deeper; problems are just a part of life."
           ],
-          "answer": 1,
+          "answer": 0,
           "marks": 4,
           "negativeMarks": 0
         },
@@ -225,7 +225,7 @@
           "question": "Choose the correct next figure.",
           "img": "./images/unnamed.png",
           "options": ["A", "B", "C", "D"],
-          "answer": 0,
+          "answer": 3,
           "marks": 4,
           "negativeMarks": 0
         },

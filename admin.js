@@ -278,14 +278,36 @@ window.toggleResultsRelease = async function(examId, releaseStatus) {
 };
 
 window.editExam = async function(examId) {
-    const newExpiry = prompt("Enter new expiry date/time (leave blank for none):\nFormat: YYYY-MM-DDTHH:MM");
-    if (newExpiry === null) return; // User cancelled
-    
     try {
+        // Get current exam data
+        const examSnap = await getDoc(doc(db, "tests", examId));
+        if (!examSnap.exists()) {
+            alert("Exam not found!");
+            return;
+        }
+        
+        const examData = examSnap.data();
+        
+        // Prompt for new exam name
+        const newTitle = prompt("Enter new exam name:", examData.title || "");
+        if (newTitle === null) return; // User cancelled
+        
+        if (!newTitle.trim()) {
+            alert("Exam name cannot be empty!");
+            return;
+        }
+        
+        // Prompt for new expiry date
+        const newExpiry = prompt("Enter new expiry date/time (leave blank for none):\nFormat: YYYY-MM-DDTHH:MM", examData.expiryDate || "");
+        if (newExpiry === null) return; // User cancelled
+        
+        // Update exam
         await updateDoc(doc(db, "tests", examId), { 
-            expiryDate: newExpiry || null 
+            title: newTitle.trim(),
+            expiryDate: newExpiry.trim() || null 
         });
-        alert("Exam updated successfully!");
+        
+        alert("✅ Exam updated successfully!");
         loadManageExams();
     } catch(err) {
         alert("Error: " + err.message);
@@ -765,8 +787,13 @@ window.loadStudentResponses = async function(examId) {
                 
                 if (detail.userAns !== null && detail.userAns !== undefined) {
                     if (Array.isArray(detail.userAns)) {
-                        answerDisplay = detail.userAns.join(', ');
+                        // Convert array of indices to 1-based options
+                        answerDisplay = detail.userAns.map(idx => idx + 1).join(', ');
+                    } else if (typeof detail.userAns === 'number') {
+                        // Convert single index to 1-based option
+                        answerDisplay = detail.userAns + 1;
                     } else {
+                        // For text/numerical answers, keep as is
                         answerDisplay = detail.userAns;
                     }
                     
