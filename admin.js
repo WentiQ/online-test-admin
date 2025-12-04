@@ -489,6 +489,38 @@ function renderStudentResponse(resultData, examData) {
         </div>
     `;
     
+    // Add feedback section if available
+    if (resultData.feedback) {
+        const feedback = resultData.feedback;
+        const stars = '★'.repeat(feedback.rating) + '☆'.repeat(5 - feedback.rating);
+        html += `
+        <div class="question-card" style="margin-bottom:20px; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border-left: 4px solid #667eea;">
+            <h3 style="color: #667eea; margin-bottom: 15px;">
+                <i class="fas fa-comment-dots"></i> Student Feedback
+            </h3>
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:15px;">
+                <div>
+                    <strong>Rating:</strong> 
+                    <span style="color: #ffc107; font-size: 1.2rem;">${stars}</span>
+                    <span style="color: var(--gray); margin-left: 8px;">(${feedback.rating}/5)</span>
+                </div>
+                <div><strong>Difficulty Level:</strong> <span style="color: var(--primary);">${feedback.difficulty}</span></div>
+            </div>
+            ${feedback.comments ? `
+                <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px; border: 1px solid #e0e0e0;">
+                    <strong style="display: block; margin-bottom: 8px; color: var(--dark);">Comments:</strong>
+                    <p style="color: var(--gray); line-height: 1.6; margin: 0;">${feedback.comments}</p>
+                </div>
+            ` : ''}
+            <div style="margin-top: 10px; font-size: 0.85rem; color: var(--gray);">
+                <i class="fas fa-clock"></i> Submitted: ${new Date(feedback.submittedAt).toLocaleString()}
+            </div>
+        </div>
+        `;
+    }
+    
+    html += ``;
+    
     // Flatten questions for proper indexing (handle passage type)
     let flatQuestions = [];
     examData.questions.forEach(q => {
@@ -698,6 +730,8 @@ window.loadStudentResponses = async function(examId) {
         });
         
         html += `
+                            <th>Feedback</th>
+                            <th>Comments</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -745,6 +779,29 @@ window.loadStudentResponses = async function(examId) {
                 
                 html += `<td style="background:${bgColor}; text-align:center;">${answerDisplay}</td>`;
             });
+            
+            // Feedback column
+            let feedbackHTML = '-';
+            if (result.feedback) {
+                const stars = '★'.repeat(result.feedback.rating) + '☆'.repeat(5 - result.feedback.rating);
+                feedbackHTML = `
+                    <div style="font-size:0.85rem;">
+                        <div style="color:#ffc107;">${stars}</div>
+                        <div style="color:var(--gray); font-size:0.75rem;">${result.feedback.difficulty}</div>
+                    </div>
+                `;
+            }
+            html += `<td>${feedbackHTML}</td>`;
+            
+            // Comments column
+            let commentsHTML = '-';
+            if (result.feedback && result.feedback.comments) {
+                const commentText = result.feedback.comments.length > 100 
+                    ? result.feedback.comments.substring(0, 100) + '...' 
+                    : result.feedback.comments;
+                commentsHTML = `<div style="font-size:0.8rem; color:var(--gray); max-width:250px; white-space:normal; line-height:1.3;" title="${result.feedback.comments}">${commentText}</div>`;
+            }
+            html += `<td>${commentsHTML}</td>`;
             
             // Status column
             let statusHTML = '';
@@ -907,7 +964,7 @@ window.exportToExcel = async function() {
             headers.push(`Q${i+1}`);
         });
         
-        headers.push('Qualification Status', 'Result Released', 'Submitted At');
+        headers.push('Qualification Status', 'Result Released', 'Submitted At', 'Feedback Rating', 'Difficulty', 'Comments');
         
         excelData.push(headers);
         
@@ -949,6 +1006,18 @@ window.exportToExcel = async function() {
                 result.resultReleased ? 'Yes' : 'No',
                 result.timestamp ? new Date(result.timestamp).toLocaleString() : '-'
             );
+            
+            // Add feedback data
+            if (result.feedback) {
+                const stars = '★'.repeat(result.feedback.rating) + '☆'.repeat(5 - result.feedback.rating);
+                row.push(
+                    `${stars} (${result.feedback.rating}/5)`,
+                    result.feedback.difficulty || '-',
+                    result.feedback.comments || '-'
+                );
+            } else {
+                row.push('No Rating', 'Not Provided', 'No Comments');
+            }
             
             excelData.push(row);
         });
