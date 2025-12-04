@@ -1,0 +1,401 @@
+========================================
+ENDURO 2025 QUALIFIER TEST
+OFFICIAL STUDENT GUIDELINES
+========================================
+
+Dear Students,
+
+Welcome to the ENDURO 2025 Qualifier Test! This document contains comprehensive guidelines to help you prepare for and successfully complete the online assessment. Please read all instructions carefully.
+
+========================================
+📋 EXAM OVERVIEW
+========================================
+
+Program Name: ENDURO 2025
+Full Title: Python Software Training cum Inner Personality Development Workshop
+
+Test Duration: 30 Minutes
+Total Sections: 4
+Total Questions: 20 Questions
+Marking Scheme: +4 marks per question | No Negative Marking
+
+Result Announcement: List of qualified students will be shared in WhatsApp groups after evaluation.
+
+========================================
+📚 EXAM STRUCTURE
+========================================
+
+The exam consists of FOUR sections, each designed to assess different competencies:
+
+SECTION 1: REASONING ABILITY (6 Questions)
+- Tests logical thinking and problem-solving skills
+- Pattern recognition and analytical reasoning
+- Mathematical logic and spatial reasoning
+- Each question: 4 marks | No negative marking
+
+SECTION 2: SOCIAL/BEHAVIORAL QUOTIENT (3 Questions)
+- Assesses interpersonal and emotional intelligence
+- Situational judgment and decision-making
+- Empathy and social awareness
+- Note: These questions have relative marking - no strictly right/wrong answers
+- Choose the option that best reflects your genuine perspective
+
+SECTION 3: PHILOSOPHICAL QUOTIENT (7 Questions)
+- Evaluates deeper understanding of life, values, and beliefs
+- Self-awareness and introspection
+- Ethical reasoning and life perspectives
+- Note: Answer based on your honest understanding and convictions
+- No strictly correct answers - authenticity is valued
+
+SECTION 4: QUANTITATIVE APTITUDE (4 Questions)
+- Tests mathematical and analytical problem-solving
+- Numerical reasoning and logical deduction
+- Basic mathematics and verbal reasoning
+- Each question: 4 marks | No negative marking
+
+⚠️ IMPORTANT: Each section has specific instructions at the beginning. Read them carefully before attempting questions.
+
+========================================
+🖥️ TECHNICAL REQUIREMENTS
+========================================
+
+MANDATORY REQUIREMENTS:
+✓ Laptop or Desktop Computer (Strongly Recommended)
+✓ Stable Internet Connection (Minimum 2 Mbps)
+✓ Updated Web Browser (Google Chrome / Mozilla Firefox / Microsoft Edge)
+✓ Webcam (If proctoring is enabled)
+✓ Microphone (If proctoring is enabled)
+
+DEVICE PREPARATION:
+✓ Fully charge your device or keep it plugged in
+✓ Close all unnecessary applications and browser tabs
+✓ Disable all notifications (email, messaging apps, etc.)
+✓ Clear browser cache if experiencing loading issues
+✓ Test your internet speed before the exam
+✓ Have a backup internet connection ready (mobile hotspot)
+
+WORKSPACE SETUP:
+✓ Find a quiet, well-lit, distraction-free environment
+✓ Ensure proper lighting for webcam (if required)
+✓ Keep your workspace clean and organized
+✓ Remove all study materials, books, and notes from desk
+✓ Keep only your device and water bottle nearby
+
+========================================
+📝 REGISTRATION & LOGIN PROCESS
+========================================
+
+BEFORE EXAM DAY:
+1. You will receive an email/message with exam link and timing
+2. Note down the exam start and end time in your local timezone
+3. Keep your Google account credentials ready for login
+4. Test the exam portal link 1-2 days before (if demo available)
+
+ON EXAM DAY:
+1. Log in 10-15 minutes before the scheduled start time
+2. Use Google Sign-In to access the student portal
+3. You will see the exam listed in "Available Exams" section
+4. Click on the exam and fill in your details accurately
+
+STUDENT INFORMATION REQUIRED:
+- Full Name (As per official records)
+- WhatsApp Number (10-digit mobile number)
+- Gmail ID (Active email address)
+- Home Town
+- Hostel Name
+- Room Number
+- JEE Advanced CRL Rank
+- Branch Name (Select from dropdown or specify other)
+
+⚠️ IMPORTANT: All fields are mandatory. Enter information accurately as it will be used for result communication.
+
+========================================
+📖 EXAM INTERFACE GUIDE
+========================================
+
+SCREEN LAYOUT:
+- Exam Title: Top left corner
+- Timer: Top right corner (counts down to 00:00)
+- Submit Button: Top right corner (green button)
+- Question Area: Center/Left side of screen
+- Question Palette: Right sidebar (collapsed on mobile)
+- Toggle Sidebar Button: Top left (☰ icon)
+
+QUESTION PALETTE (Color-Coded System):
+🟢 Green Circle: Answered (you have saved an answer)
+🔴 Red Circle: Not Answered (visited but skipped without saving)
+🟣 Purple Circle: Marked for Review (flagged for later review)
+⚪ Gray Circle: Not Visited (haven't seen this question yet)
+
+NAVIGATION BUTTONS:
+1. Save & Next - Saves your current answer and moves to next question
+2. Mark Review - Flags question for review (with or without answer saved)
+3. Clear - Removes your selected answer for current question
+4. Next > - Moves to next question without saving (useful for skipping)
+
+You can click any question number in the palette to jump directly to that question at any time.
+
+========================================
+⚠️ CRITICAL EXAM RULES
+========================================
+
+STRICTLY PROHIBITED (May Lead to Disqualification):
+❌ DO NOT refresh or close the browser tab during exam
+❌ DO NOT switch tabs or minimize the screen (system monitors tab switches)
+❌ DO NOT use calculators, books, mobiles, or any external help
+❌ DO NOT take screenshots, photos, or record the test screen
+❌ DO NOT communicate with anyone during the test (chat, call, etc.)
+❌ DO NOT use any unfair means or try to manipulate the system
+❌ DO NOT have multiple devices open with exam content
+
+ALLOWED DURING EXAM:
+✓ Navigate freely between questions using the question palette
+✓ Mark questions for review and revisit them later
+✓ Change your answers before final submission
+✓ Use rough paper/notebook for calculations (keep it visible to webcam)
+✓ Take short breaks if needed (timer continues running)
+
+========================================
+⏱️ TIME MANAGEMENT STRATEGY
+========================================
+
+Total Time: 30 Minutes for 20 Questions
+Average Time per Question: 1.5 minutes
+
+RECOMMENDED STRATEGY:
+1. First 2 minutes: Quickly scan through all questions to identify easy/difficult ones
+2. Next 18 minutes: Attempt all questions you're confident about
+3. Next 8 minutes: Attempt moderately difficult questions
+4. Last 2 minutes: Make educated guesses for remaining questions and review marked questions
+
+IMPORTANT TIME ALERTS:
+- Timer shows remaining time continuously
+- When 5 minutes remain, timer may change color to alert you
+- At 00:00, exam auto-submits automatically
+- NO EXTENSIONS will be given for any reason
+
+PRO TIPS:
+✓ Don't spend too much time on any single question
+✓ Attempt easier questions first to build confidence and score
+✓ Use "Mark for Review" for questions you want to revisit
+✓ Keep an eye on the timer regularly
+✓ Submit the exam 1-2 minutes early to avoid last-second issues
+
+========================================
+✅ STEP-BY-STEP EXAM PROCESS
+========================================
+
+PHASE 1: INTRODUCTION PAGE (2 minutes reading time)
+- After entering student details, you'll see the exam introduction
+- This page contains exam-specific instructions and guidelines
+- A timer will count down from 2:00 minutes
+- Read all instructions carefully
+- Click "Continue to Instructions" when ready (or wait for timer to expire)
+
+PHASE 2: INTERFACE INSTRUCTIONS PAGE (5 minutes reading time)
+- Detailed guide on how to use the exam interface
+- Explanation of question palette, buttons, and navigation
+- Important reminders and tips for success
+- A timer will count down from 5:00 minutes
+- Click "I'm Ready - Start Exam Now" when ready (or wait for auto-start)
+
+PHASE 3: EXAM ATTEMPT (30 minutes)
+- Main exam timer starts (30:00 minutes)
+- Answer questions in any order you prefer
+- Use navigation buttons and question palette effectively
+- Monitor your time regularly
+- Review marked questions if time permits
+
+PHASE 4: SUBMISSION
+- Click the green "Submit" button when finished
+- Confirm your submission in the popup dialog
+- DO NOT close browser until you see confirmation message
+- Download your response PDF if prompted
+
+PHASE 5: RESULT VIEW
+- After submission, you'll be redirected to results page
+- For ENDURO 2025: You'll see "Result Pending" status
+- Admin will review all responses and mark students as Qualified/Not Qualified
+- Once results are released, you'll see your qualification status
+- Download your response PDF to keep a record
+
+========================================
+🎯 ANSWERING STRATEGIES
+========================================
+
+FOR REASONING & QUANTITATIVE QUESTIONS:
+✓ Read the question twice to understand exactly what's being asked
+✓ Eliminate obviously wrong options first
+✓ Use rough work for calculations and logical deduction
+✓ Double-check your selected answer before clicking "Save & Next"
+✓ If stuck, mark for review and move on
+
+FOR SOCIAL/BEHAVIORAL QUESTIONS:
+✓ Read the scenario carefully and visualize the situation
+✓ Think about what YOU would genuinely do/feel
+✓ There are no trick answers - be authentic
+✓ Choose the option that best reflects your true perspective
+✓ Don't overthink - your first instinct is usually right
+
+FOR PHILOSOPHICAL QUESTIONS:
+✓ Answer from your heart and genuine beliefs
+✓ These questions assess self-awareness and depth of thinking
+✓ There are no universally "correct" answers
+✓ Honesty and thoughtfulness are more valuable than trying to guess "right" answer
+✓ Take a moment to reflect before answering
+
+GENERAL TIPS:
+✓ Read all options before selecting one
+✓ Pay attention to words like "MUST", "ALWAYS", "NEVER" - they're often indicators
+✓ If a question has images, ensure they load properly before answering
+✓ Use the "Clear" button if you want to change your answer
+✓ Trust your preparation and stay confident
+
+========================================
+🚨 TROUBLESHOOTING COMMON ISSUES
+========================================
+
+PROBLEM: Exam won't load or keeps buffering
+SOLUTION: 
+- Refresh the page once (only before exam starts)
+- Check your internet connection
+- Clear browser cache and cookies
+- Try a different browser (Chrome recommended)
+- Switch to mobile hotspot if WiFi is unstable
+
+PROBLEM: Timer is not visible or not counting down
+SOLUTION:
+- This is usually a display issue - exam is still running
+- Try pressing F11 to exit/enter fullscreen
+- Continue attempting - timer is running in background
+- Submit as soon as you finish
+
+PROBLEM: Image in question not loading
+SOLUTION:
+- Wait a few seconds for image to load
+- Click on the image area to retry loading
+- Check your internet connection
+- If persistent, mark for review and report after exam
+
+PROBLEM: Can't click "Submit" button
+SOLUTION:
+- Scroll to top of page
+- Look for green "Submit" button in top-right corner
+- If still not clickable, try refreshing (your progress should be saved)
+- Contact support immediately
+
+PROBLEM: Accidental tab switch or browser close
+SOLUTION:
+- Immediately return to the exam tab
+- DO NOT refresh or close again
+- Continue from where you left off
+- Complete exam as quickly as possible
+- Note: Excessive tab switches may trigger auto-submission
+
+EMERGENCY CONTACT:
+If you face any technical issues during the exam, take a screenshot and immediately contact:
+[Add coordinator contact details]
+[Add technical support email]
+[Add WhatsApp support number]
+
+========================================
+📜 INTEGRITY & CONDUCT
+========================================
+
+ACADEMIC INTEGRITY DECLARATION:
+By starting this exam, you acknowledge and agree that:
+✓ You will not use any unfair means or prohibited resources
+✓ All answers will be your own work and understanding
+✓ You will maintain honesty and integrity throughout the exam
+✓ You understand that violation of rules may lead to disqualification
+✓ You will accept the exam results and decisions of the evaluation committee
+
+CODE OF CONDUCT:
+✓ Maintain professional behavior throughout the exam
+✓ Do not attempt to manipulate or hack the exam system
+✓ Do not share exam content with anyone during or after the exam
+✓ Do not help or receive help from others during the exam
+✓ Report any technical issues immediately and honestly
+✓ Accept results gracefully and learn from the experience
+
+CONSEQUENCES OF VIOLATION:
+- Immediate disqualification from ENDURO 2025
+- Zero marks and result cancellation
+- Report to institute authorities if required
+- Ban from future ENDURO programs
+- Possible disciplinary action as per institute norms
+
+========================================
+💡 PREPARATION CHECKLIST (1 Day Before)
+========================================
+
+TECHNICAL PREPARATION:
+□ Laptop/Desktop fully charged and working properly
+□ Internet connection tested and stable
+□ Browser updated to latest version
+□ Webcam and microphone tested (if required)
+□ Backup internet connection arranged (mobile hotspot)
+□ All notifications disabled
+□ Exam link bookmarked and accessible
+
+PERSONAL PREPARATION:
+□ Student details (name, rank, hostel, etc.) noted down
+□ Google account credentials ready
+□ Exam timing noted and alarm set
+□ Quiet study space arranged
+□ Water bottle and snacks kept ready
+□ Rough paper and pen available
+□ Comfortable seating arranged
+
+MENTAL PREPARATION:
+□ Reviewed basic concepts for each section
+□ Practiced time management
+□ Got adequate sleep (7-8 hours)
+□ Stayed calm and confident
+□ Positive mindset and readiness
+
+========================================
+✨ FINAL WORDS OF ENCOURAGEMENT
+========================================
+
+Dear Students,
+
+ENDURO 2025 is designed to identify students who demonstrate not just academic capability, but also emotional intelligence, philosophical depth, and genuine personality. 
+
+Remember:
+- This is not just about getting all questions right
+- Your authentic responses matter more than guessing "ideal" answers
+- Stay true to yourself, especially in behavioral and philosophical questions
+- Time management and smart work are as important as hard work
+- Every question is an opportunity to showcase your unique perspective
+
+We believe in your potential. You've already taken the first step by preparing with these guidelines. Now go ahead and give your best effort!
+
+All the very best! 🚀
+
+May you qualify and embark on an enriching journey of learning and personal growth!
+
+========================================
+IMPORTANT REMINDERS
+========================================
+
+✓ Read all instructions on introduction and interface pages carefully
+✓ Fill student details accurately - they're used for result communication
+✓ Use question palette and navigation buttons effectively
+✓ Manage your time wisely - 30 minutes goes quickly
+✓ Stay calm and focused throughout
+✓ Submit 1-2 minutes before time ends to avoid issues
+✓ Download your response PDF after submission
+✓ Wait patiently for results - they'll be announced in WhatsApp groups
+
+========================================
+
+For any queries or clarifications, please contact the ENDURO 2025 coordination team.
+
+Good Luck! 🎯
+
+========================================
+Document Version: 1.0
+Last Updated: December 4, 2025
+© ENDURO 2025 Team
+========================================

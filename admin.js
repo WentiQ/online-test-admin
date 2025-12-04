@@ -481,10 +481,6 @@ function renderStudentResponse(resultData, examData) {
                 <div><strong>Score:</strong> <span style="color:var(--primary); font-size:1.2rem; font-weight:bold;">${resultData.score}</span></div>
                 <div><strong>WhatsApp:</strong> <a href="https://wa.me/91${resultData.studentPhone}" target="_blank" style="color:green; text-decoration:none;">📱 ${resultData.studentPhone || '-'}</a></div>
                 <div><strong>Email:</strong> ${resultData.studentEmail || resultData.email || '-'}</div>
-                <div><strong>Hometown:</strong> ${resultData.studentHometown || '-'}</div>
-                <div><strong>Hostel:</strong> ${resultData.studentHostel || '-'}</div>
-                <div><strong>Room:</strong> ${resultData.studentRoom || '-'}</div>
-                <div><strong>JEE Rank:</strong> ${resultData.studentRank || '-'}</div>
                 <div><strong>Branch:</strong> ${resultData.studentBranch || '-'}</div>
                 <div><strong>Exam:</strong> ${resultData.examTitle || examData.title}</div>
                 <div><strong>Submitted:</strong> ${new Date(resultData.timestamp).toLocaleString()}</div>
@@ -692,10 +688,6 @@ window.loadStudentResponses = async function(examId) {
                             <th style="position:sticky; left:0; background:var(--primary); z-index:2;">Student Name</th>
                             <th>WhatsApp</th>
                             <th>Email</th>
-                            <th>Hometown</th>
-                            <th>Hostel</th>
-                            <th>Room</th>
-                            <th>JEE Rank</th>
                             <th>Branch</th>
                             <th>Score</th>`;
         
@@ -729,10 +721,6 @@ window.loadStudentResponses = async function(examId) {
                     <td style="position:sticky; left:0; background:white; font-weight:bold; border-right:2px solid #ddd;">${result.studentName || 'Unknown'}</td>
                     <td>${whatsappLink}</td>
                     <td style="font-size:0.8rem;">${result.studentEmail || result.email || '-'}</td>
-                    <td>${result.studentHometown || '-'}</td>
-                    <td>${result.studentHostel || '-'}</td>
-                    <td>${result.studentRoom || '-'}</td>
-                    <td>${result.studentRank || '-'}</td>
                     <td style="font-size:0.8rem;">${result.studentBranch || '-'}</td>
                     <td style="font-weight:bold;">${result.score}</td>`;
             
@@ -910,10 +898,6 @@ window.exportToExcel = async function() {
             'Student Name',
             'WhatsApp',
             'Email',
-            'Hometown',
-            'Hostel',
-            'Room',
-            'JEE Rank',
             'Branch',
             'Total Score'
         ];
@@ -933,10 +917,6 @@ window.exportToExcel = async function() {
                 result.studentName || 'Unknown',
                 result.studentPhone || '-',
                 result.studentEmail || result.email || '-',
-                result.studentHometown || '-',
-                result.studentHostel || '-',
-                result.studentRoom || '-',
-                result.studentRank || '-',
                 result.studentBranch || '-',
                 result.score || 0
             ];
