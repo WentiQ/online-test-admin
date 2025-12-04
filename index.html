@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -14,6 +15,7 @@
         <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
             <button class="btn btn-primary" onclick="switchTab('create')">Create Exam</button>
             <button class="btn btn-outline" onclick="switchTab('manage')">Manage Exams</button>
+            <button class="btn btn-outline" onclick="switchTab('review')">Review Responses</button>
             <button class="btn btn-outline" onclick="switchTab('monitor')">Live Monitor</button>
         </div>
 
@@ -32,20 +34,79 @@
                         <div style="flex:1"><label>Duration (Min)</label><input type="number" id="duration" value="180" required></div>
                         <div style="flex:1"><label>Attempts</label><input type="number" id="attempts" value="1"></div>
                     </div>
+                    <div class="row" style="display:flex; gap:20px;">
+                        <div style="flex:1"><label>Introduction Time Limit (Seconds)</label><input type="number" id="introTimeLimit" value="120" placeholder="Default: 120 seconds"></div>
+                        <div style="flex:1"></div>
+                    </div>
 
                     <div class="row" style="display:flex; gap:20px;">
                         <div style="flex:1">
                             <label>Expiry Date (optional)</label>
                             <input type="datetime-local" id="expiryDate">
                         </div>
-                        <div style="flex:1; display:flex; align-items:end;">
-                            <label style="margin-right:10px;">Disable Exam</label>
-                            <input type="checkbox" id="disabled" style="width:20px; height:20px;">
+                        <div style="flex:1; display:flex; align-items:end; gap:20px; flex-wrap: wrap;">
+                            <div>
+                                <label style="margin-right:10px;">Disable Exam</label>
+                                <input type="checkbox" id="disabled" style="width:20px; height:20px;">
+                            </div>
+                            <div>
+                                <label style="margin-right:10px;">Release Results</label>
+                                <input type="checkbox" id="resultsReleased" checked style="width:20px; height:20px;">
+                            </div>
                         </div>
                     </div>
 
+                    <label>Result Type (What students see after submission)</label>
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; cursor: pointer;">
+                                <input type="radio" name="resultType" value="analysis" checked style="width:20px; height:20px;">
+                                <div>
+                                    <strong>Analysis Button</strong> - Students can see detailed analysis (marks, correct answers, explanations)
+                                </div>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="radio" name="resultType" value="result" style="width:20px; height:20px;">
+                                <div>
+                                    <strong>Result Button</strong> - Admin manually reviews and declares Qualified/Not Qualified (like Google Forms)
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div id="analysis-options" style="border-top: 1px solid #dee2e6; padding-top: 15px;">
+                            <p style="font-size:0.9rem; margin-bottom:10px;"><strong>Analysis Display Options:</strong></p>
+                            <div style="display:flex; gap:20px; flex-wrap: wrap;">
+                                <div>
+                                    <label style="margin-right:10px;">Show Marking Scheme</label>
+                                    <input type="checkbox" id="showMarkingScheme" checked style="width:20px; height:20px;">
+                                </div>
+                                <div>
+                                    <label style="margin-right:10px;">Show Rank</label>
+                                    <input type="checkbox" id="showRank" checked style="width:20px; height:20px;">
+                                </div>
+                                <div>
+                                    <label style="margin-right:10px;">Show Final Marks</label>
+                                    <input type="checkbox" id="showFinalMarks" checked style="width:20px; height:20px;">
+                                </div>
+                                <div>
+                                    <label style="margin-right:10px;">Show Correct Answers</label>
+                                    <input type="checkbox" id="showCorrectAnswers" checked style="width:20px; height:20px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label>Introduction (JSON Format)</label>
+                    <p style="font-size:0.8rem; color:var(--gray);">
+                        Format: {"title": "Welcome to Exam", "content": "Instructions here...", "banner": "./images/banner.jpg"}<br>
+                        <strong>banner</strong> is optional. Use HTML tags in content if needed.
+                    </p>
+                    <textarea id="introduction" rows="4" placeholder='{"title": "Exam Instructions", "content": "Read carefully..."}'></textarea>
+
                     <label>Question Data (JSON)</label>
                     <p style="font-size:0.8rem; color:var(--gray);">
+                        <strong>Legacy format:</strong> Array of questions<br>
+                        <strong>New format:</strong> {"sections": [{"title": "Section A", "instruction": "...", "questions": [...]}]}<br>
                         Supports: Images ("img"), LaTeX Math ("\( x^2 \)"), Explanations ("explanation"), Custom Marks ("pos", "neg").
                     </p>
                     <textarea id="json-input" rows="10" placeholder='Paste JSON here...'></textarea>
@@ -57,6 +118,18 @@
         <div id="tab-manage" class="hidden">
             <h2>Manage Exams</h2>
             <div id="exam-list-manage"></div>
+        </div>
+
+        <div id="tab-review" class="hidden">
+            <h2>Review Student Responses</h2>
+            <p style="color:var(--gray); margin-bottom:20px;">View all student answers in Excel-like format. Mark students as Qualified/Not Qualified and release results.</p>
+            
+            <select id="review-exam-select" style="padding:10px; width:100%; margin-bottom:20px;" onchange="loadStudentResponses(this.value)">
+                <option value="">-- Select Exam to Review --</option>
+            </select>
+
+            <div id="review-content"></div>
+            <input type="hidden" id="current-review-exam-id" value="">
         </div>
 
         <div id="tab-monitor" class="hidden">
@@ -75,11 +148,18 @@
                 <div style="flex:1">
                     <h3>Leaderboard</h3>
                     <table>
-                        <thead><tr><th>Rank</th><th>Student</th><th>Score</th></tr></thead>
+                        <thead><tr><th>Rank</th><th>Student</th><th>Score</th><th>Responses</th></tr></thead>
                         <tbody id="rank-table"></tbody>
                     </table>
                 </div>
             </div>
+        </div>
+
+        <div id="tab-responses" class="hidden">
+            <div style="margin-bottom:20px;">
+                <button class="btn btn-outline" onclick="switchTab('monitor')">← Back to Monitor</button>
+            </div>
+            <div id="response-content"></div>
         </div>
     </div>
 
@@ -87,8 +167,14 @@
         function switchTab(t) {
             document.getElementById('tab-create').classList.add('hidden');
             document.getElementById('tab-manage').classList.add('hidden');
+            document.getElementById('tab-review').classList.add('hidden');
             document.getElementById('tab-monitor').classList.add('hidden');
+            document.getElementById('tab-responses').classList.add('hidden');
             document.getElementById('tab-'+t).classList.remove('hidden');
+            
+            if (t === 'review') {
+                loadReviewExams();
+            }
             if(t === 'manage' && window.loadManageExams) window.loadManageExams();
         }
         

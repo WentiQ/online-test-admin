@@ -1,0 +1,259 @@
+{
+  "title": "ENDURO 2025 Qualifier Test",
+  "content": "<div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'><h2 style='margin: 0 0 10px 0; font-size: 2rem;'>Welcome to ENDURO 2025! 🚀</h2><p style='margin: 0; font-size: 1.1rem; opacity: 0.95;'>Python Software Training cum Inner Personality Development Workshop</p></div><div style='background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 6px; margin-bottom: 20px;'><p style='margin: 0; color: #856404;'><strong>📢 Result Announcement:</strong> List of qualified students will be shared in the WhatsApp groups.</p></div><div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 25px;'><div style='background: #e3f2fd; padding: 20px; border-radius: 8px; border-left: 4px solid #2196F3;'><h4 style='margin: 0 0 8px 0; color: #1976D2;'>⏱️ Test Duration</h4><p style='margin: 0; font-size: 1.3rem; font-weight: bold; color: #1565C0;'>30 Minutes</p></div><div style='background: #f3e5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #9C27B0;'><h4 style='margin: 0 0 8px 0; color: #7B1FA2;'>📝 Total Sections</h4><p style='margin: 0; font-size: 1.3rem; font-weight: bold; color: #6A1B9A;'>4 Sections</p></div><div style='background: #e8f5e9; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;'><h4 style='margin: 0 0 8px 0; color: #388E3C;'>✅ Marking Scheme</h4><p style='margin: 0; font-size: 1.1rem; font-weight: bold; color: #2E7D32;'>No Negative Marking</p></div></div><div style='background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 25px;'><h4 style='color: #495057; margin-top: 0;'>📚 Exam Sections</h4><ol style='margin: 10px 0; padding-left: 20px; line-height: 1.8;'><li><strong>Reasoning Ability</strong> - Logical thinking and problem-solving</li><li><strong>Social/Behavioral Quotient</strong> - Interpersonal and emotional intelligence</li><li><strong>Philosophical Quotient</strong> - Deeper understanding of life and values</li><li><strong>Quantitative Aptitude</strong> - Mathematical and analytical skills</li></ol><p style='margin: 10px 0 0 0; color: #6c757d; font-style: italic;'>💡 Each section has specific instructions - read them carefully before answering.</p></div><hr style='border: none; border-top: 2px solid #dee2e6; margin: 30px 0;'><h3 style='color: #dc3545; margin-bottom: 20px;'>⚠️ Critical Exam Rules - Must Read!</h3><div style='background: #fff; border: 2px solid #dc3545; border-radius: 8px; padding: 20px; margin-bottom: 20px;'><h4 style='color: #dc3545; margin-top: 0;'>🚫 Strictly Prohibited</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #495057;'><li><strong>DO NOT</strong> refresh or close the browser tab during the exam</li><li><strong>DO NOT</strong> switch tabs or minimize the screen (may cause auto-submission)</li><li><strong>DO NOT</strong> use calculators, books, mobiles, or any external help</li><li><strong>DO NOT</strong> take screenshots, photos, or record the test screen</li><li><strong>DO NOT</strong> communicate or discuss with anyone during the test</li></ul></div><div style='background: #d1ecf1; border: 2px solid #0c5460; border-radius: 8px; padding: 20px; margin-bottom: 20px;'><h4 style='color: #0c5460; margin-top: 0;'>✔️ Before You Start</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #0c5460;'><li>Ensure you have a <strong>stable internet connection</strong></li><li>Keep your device <strong>fully charged</strong> or plugged in</li><li>Turn off all <strong>notifications and distractions</strong></li><li>Find a <strong>quiet, well-lit place</strong> to take the exam</li><li>Keep <strong>webcam enabled</strong> if required by the platform</li></ul></div><div style='background: #fff3cd; border: 2px solid #856404; border-radius: 8px; padding: 20px; margin-bottom: 20px;'><h4 style='color: #856404; margin-top: 0;'>⚡ During the Exam</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #856404;'><li>You can navigate between questions using the <strong>question palette</strong></li><li>Questions can be <strong>marked for review</strong> and revisited later</li><li>Use <strong>Save & Next</strong> button to save your answer</li><li>Timer will be visible at all times - <strong>manage your time wisely</strong></li><li>Unanswered questions will be marked as <strong>skipped</strong></li><li>Submit the test before time ends - <strong>auto-submission occurs at 00:00</strong></li></ul></div><div style='background: #d4edda; border: 2px solid #155724; border-radius: 8px; padding: 20px;'><h4 style='color: #155724; margin-top: 0;'>🎯 Tips for Success</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #155724;'><li>Read each question and all options <strong>carefully</strong></li><li>Attempt easier questions first to <strong>build confidence</strong></li><li>Use the <strong>Mark for Review</strong> feature for difficult questions</li><li>Keep an eye on the <strong>timer</strong> and pace yourself</li><li>Review all marked questions before final submission</li><li>Stay <strong>calm and focused</strong> throughout the exam</li></ul></div><div style='background: #343a40; color: white; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center;'><p style='margin: 0; font-size: 1.1rem;'>📜 <strong>Declaration:</strong> By proceeding, you agree to follow all exam rules and maintain <strong>academic integrity</strong>.</p><p style='margin: 10px 0 0 0; font-size: 0.95rem; opacity: 0.9;'>Violation of any rule may result in disqualification.</p></div><div style='text-align: center; margin-top: 25px; padding: 15px; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); border-radius: 8px;'><p style='margin: 0; color: white; font-size: 1.2rem; font-weight: bold;'>✨ All the Best! We believe in your potential! ✨</p></div>",
+  "banner": "./images/banner.png"
+}
+
+
+
+
+{
+  "sections": [
+    {
+      "title": "Section 1: Reasoning Ability",
+      "instruction": "Choose the correct answer for each question. Each question carries 4 marks with no negative marking.",
+      "questions": [
+        {
+          "type": "single",
+          "question": "If 5 people shake hands with each other, how many handshakes will happen?",
+          "options": ["5", "25", "20", "10"],
+          "answer": 3,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Sachinandan completes 4 rounds in a circular path around the Jagannath temple. If the radius of Jagannath temple is 10 m, what is the displacement Sachinandan covered after 4 rounds?",
+          "options": ["251.2 m", "80 π m", "0.00 m", "314 m"],
+          "answer": 2,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "In a family there are 2 mothers, one grandmother and one daughter. How many minimum people are there in the family?",
+          "options": ["2", "3", "4", "5"],
+          "answer": 1,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "In a queue, Mr. X is 14th from the start and Mr. Y is 17th from the end, while Mr. Z is exactly in the middle of Mr. X and Mr. Y. Mr Y is ahead of Mr. X and there are 18 persons in the queue. How many persons are there between Mr. X and Mr. Z?",
+          "options": ["4", "5", "8", "6"],
+          "answer": 0,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Find the next number in the series: 3, 44, 477, 3514, 17815, ?",
+          "options": ["53445", "53808", "53688", "195965"],
+          "answer": 0,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Sunil is the son of Anil. Shweta, Anil's sister, has a son Maruti and daughter Sita. Prem is the maternal uncle of Maruti. How is Prem related to Sunil?",
+          "options": ["Cousin", "Paternal Uncle", "Brother", "Nephew"],
+          "answer": 0,
+          "marks": 4,
+          "negativeMarks": 0
+        }
+      ]
+    },
+    {
+      "title": "Section 2: Social/Behavioral Quotient",
+      "instruction": "All these questions have relative marking. There are no strictly right or wrong answers - choose the option that best reflects your perspective or approach.",
+      "questions": [
+        {
+          "type": "single",
+          "question": "A discussion between you and your friend has led to a verbal quarrel. You both are upset and in the heat of the argument, you unnecessarily started blaming each other. What is the best thing to do and why?",
+          "options": [
+            "Keep blaming each other until one of you wins the argument.",
+            "Take a pause, calm down, and then resume the discussion later when emotions are settled.",
+            "Walk away and avoid the quarrel completely.",
+            "Acknowledge your mistake, apologize for unnecessary blame, listen to your friend's feelings, and try to resolve the issue calmly."
+          ],
+          "answer": 3,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Why, in spite of having money, fast gadgets, facilities, and enjoyment, are people still not happy? Western countries have all these, yet we still see increasing rates of suicides, divorces, loneliness, quarrels, and intoxication.",
+          "options": [
+            "People have gone away from Vedic god-centered culture... more we go away from God, greed, lust and anger increases and hence so many problems. As we see in past India was called 'sone ki chidiya' and people were happy also because they were living god-centered life then everything comes.",
+            "I don't know why people are not happy, but it is good question to think about.",
+            "Our government and scientists are trying to find out... after some years we will get better understanding about what changes we should bring so that people can be happy.",
+            "There's no use in thinking deeper; problems are just a part of life."
+          ],
+          "answer": 1,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "ENVISION: You are standing at a station. You see some beggars asking for money - some don't have hands or legs, some are blind, some are orphans without parents, some are dirty. You are eating a chocolate worth Rs. 100. What are your feelings?",
+          "options": [
+            "Who cares for all these people, I want to enjoy my life. I will continue my way and forget them.",
+            "Why is God so cruel to hurt these people? That's why I don't believe in God business.",
+            "I will give some rupees to a beggar. I feel sad for them.",
+            "I feel very sad for these people. I feel there should not be any unhappiness in the world. I'll do social service and help others.",
+            "I feel extremely sad seeing them. I want to help them and want to see everyone happy in this world. But I realize that even I am suffering. Why is there suffering in this world? How can we end it? Those will be my contemplations and search."
+          ],
+          "answer": 4,
+          "marks": 4,
+          "negativeMarks": 0
+        }
+      ]
+    },
+    {
+      "title": "Section 3: Philosophical Quotient",
+      "instruction": "All these questions have relative marking. Please answer based on your understanding, beliefs, or inner convictions. There are no strictly correct answers.",
+      "questions": [
+        {
+          "type": "single",
+          "question": "ASSUME: Some of your friends (and maybe you also) have been found to have some bad habits like 'watching inappropriate content, smoking, drinking occasionally etc'. What will you do?",
+          "options": [
+            "Life is meant for enjoyment. Why should we call these things bad – whatever feels good just do it.",
+            "I feel these things are OK but should not be done too much.",
+            "I feel it is not the right age to do these things, later in our colleges or job we can do these.",
+            "These are bad habits. Even if I have them, I don't want to continue with these bad things.",
+            "No one should do these things. We should lead a pure life based on principles."
+          ],
+          "answer": 4,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Suppose you suddenly achieve great success and wealth. What's your first thought?",
+          "options": [
+            "This is everything; there's nothing more to life than this.",
+            "Wealth is temporary; I should search for the eternal.",
+            "Does success really bring lasting happiness?",
+            "Great, now I can live comfortably and enjoy life."
+          ],
+          "answer": 1,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Someone comes and gives you Bhagavad Gita or Bible or Quran. What will you do?",
+          "options": [
+            "I don't believe in all this. It is a useless waste of time to read these things.",
+            "If I am feeling low, if I am in distress I will read them, otherwise they are not required.",
+            "I want to get my desires fulfilled. I think these books can help me for that.",
+            "I don't know much about God. I think I should read and find what is there.",
+            "From my heart there was always a calling to know more about God. I want to read them seriously & understand the message."
+          ],
+          "answer": 4,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Do you think that life of a person ends totally at the time of death? Or do you feel that a person continues to exist even after death in some form?",
+          "options": [
+            "Yes, person continues to live after death in his works and memories.",
+            "No, everything is finished at time of death.",
+            "Yes, based on person's desires and activities in present life – SOUL gets another body at time of death.",
+            "I am not sure; I never thought about it. I am inquisitive to know more."
+          ],
+          "answer": 2,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "During stressful times (like exams or family problems), how do you usually think?",
+          "options": [
+            "There's no use in thinking deeper; stress is just part of life.",
+            "Why do such situations arise? Is there a deeper lesson?",
+            "Happiness and stress are temporary—I want to rise above both.",
+            "If I work harder and stay strong, things will get better."
+          ],
+          "answer": 2,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "When you see someone meditating quietly in the park, what do you think?",
+          "options": [
+            "Meditation is a waste, only weak people do that.",
+            "Maybe they're just relaxing; good for them but not my interest.",
+            "I wonder what kind of experience they are having—I'd like to try once.",
+            "They're connecting with something higher that gives real peace."
+          ],
+          "answer": 3,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Your friend invites you to a talk on 'Inner Peace.' How do you respond?",
+          "options": [
+            "Peace of mind is more valuable than external achievements; I want to explore this deeply.",
+            "Not my priority right now, I'll rather prepare for exams or career.",
+            "Such talks are boring; peace is just an illusion anyway.",
+            "I'll go, maybe I'll learn something interesting."
+          ],
+          "answer": 0,
+          "marks": 4,
+          "negativeMarks": 0
+        }
+      ]
+    },
+    {
+      "title": "Section 4: Quantitative Aptitude",
+      "instruction": "Solve the following numerical and logical problems. Choose the correct option for each question.",
+      "questions": [
+        {
+          "type": "single",
+          "question": "A tank has a leak, which would empty it in 8 hours. A tap is turned on which fills at the rate of 4 litres per minute and the tank is now emptied in 12 hours. Find the capacity of the tank.",
+          "options": ["5760 litres", "6075 litres", "7065 litres", "5670 litres"],
+          "answer": 0,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "Choose the correct next figure.",
+          "img": "./images/unnamed.png",
+          "options": ["A", "B", "C", "D"],
+          "answer": 0,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "The sum of the terms of an infinite geometric progression is 27. The sum of their squares is 364.5. Find the common ratio.",
+          "options": ["1/3", "1/7", "1/5", "1/9"],
+          "answer": 0,
+          "marks": 4,
+          "negativeMarks": 0
+        },
+        {
+          "type": "single",
+          "question": "The fashion designer's new line of spring clothing was described in the style section of the newspaper as _______, even _______; the runway collection had dazzled the audience.",
+          "options": [
+            "unassuming……audacious",
+            "capricious……innocuous",
+            "tawdry……precocious",
+            "vivacious……insipid",
+            "resplendent……incandescent"
+          ],
+          "answer": 4,
+          "marks": 4,
+          "negativeMarks": 0
+        }
+      ]
+    }
+  ]
+}
+
+
