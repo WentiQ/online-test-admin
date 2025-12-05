@@ -7,11 +7,19 @@ function checkMissingAnswers(questions) {
         if (q.type === 'passage' && Array.isArray(q.questions)) {
             // Check sub-questions in passage
             for (let subQ of q.questions) {
+                // Skip check if question has relative grading (no fixed answer)
+                if (subQ.relativeGrading && typeof subQ.relativeGrading === 'object') {
+                    continue;
+                }
                 if (!subQ.answer && subQ.answer !== 0 && !subQ.correct && subQ.correct !== 0) {
                     return true;
                 }
             }
         } else {
+            // Skip check if question has relative grading (no fixed answer)
+            if (q.relativeGrading && typeof q.relativeGrading === 'object') {
+                continue;
+            }
             // Check regular questions
             if (!q.answer && q.answer !== 0 && !q.correct && q.correct !== 0) {
                 return true;
@@ -323,34 +331,74 @@ window.updateAnswers = async function(examId) {
         }
         
         const examData = examSnap.data();
-        const currentQuestions = JSON.stringify(examData.questions, null, 2);
         
-        const newQuestionsStr = prompt(
+        // Support both sectioned and flat formats
+        let currentData;
+        if (examData.sections) {
+            // Sectioned format - show entire exam structure
+            currentData = {
+                title: examData.title,
+                duration: examData.duration,
+                sections: examData.sections
+            };
+        } else {
+            // Old flat format - just questions
+            currentData = examData.questions;
+        }
+        
+        const currentDataStr = JSON.stringify(currentData, null, 2);
+        
+        const newDataStr = prompt(
             "Update Question Data (JSON):\n\n" +
             "You can update answers, options, or any question field.\n" +
-            "Current questions are pre-filled below.\n\n" +
+            (examData.sections ? "For sectioned exams, paste the full exam JSON with title, duration, and sections.\n" : "") +
+            "Current data is pre-filled below.\n\n" +
             "Press OK to save changes:",
-            currentQuestions
+            currentDataStr
         );
         
-        if (newQuestionsStr === null) return; // User cancelled
+        if (newDataStr === null) return; // User cancelled
         
         try {
-            const updatedQuestions = JSON.parse(newQuestionsStr);
+            const updatedData = JSON.parse(newDataStr);
+            
+            // Determine format and extract questions for validation
+            let questionsToCheck;
+            let updatePayload = {};
+            
+            if (updatedData.sections) {
+                // Sectioned format
+                questionsToCheck = [];
+                updatedData.sections.forEach(section => {
+                    if (section.questions) {
+                        questionsToCheck.push(...section.questions);
+                    }
+                });
+                updatePayload = {
+                    title: updatedData.title || examData.title,
+                    duration: updatedData.duration || examData.duration,
+                    sections: updatedData.sections,
+                    questions: questionsToCheck  // CRITICAL: Also update flattened questions array
+                };
+            } else if (Array.isArray(updatedData)) {
+                // Old flat format (array of questions)
+                questionsToCheck = updatedData;
+                updatePayload = { questions: updatedData };
+            } else {
+                throw new Error("Invalid format: expected array of questions or object with sections");
+            }
             
             // Check if answers are complete now
-            const stillHasMissingAnswers = checkMissingAnswers(updatedQuestions);
+            const stillHasMissingAnswers = checkMissingAnswers(questionsToCheck);
             const shouldAutoRelease = !stillHasMissingAnswers;
             
-            // Update exam with new questions
-            await updateDoc(doc(db, "tests", examId), {
-                questions: updatedQuestions,
-                resultsReleased: shouldAutoRelease
-            });
+            // Update exam with new data
+            updatePayload.resultsReleased = shouldAutoRelease;
+            await updateDoc(doc(db, "tests", examId), updatePayload);
             
             if (shouldAutoRelease) {
                 // Recalculate all results for this exam
-                await recalculateResults(examId, updatedQuestions);
+                await recalculateResults(examId, questionsToCheck);
                 alert("✅ Answers updated and results released automatically!\n\nAll student scores have been recalculated.");
             } else {
                 alert("⚠️ Answers updated but some questions still missing answers.\n\nResults remain PENDING.");
@@ -392,29 +440,35 @@ async function recalculateResults(testId, updatedQuestions) {
                 let isCorrect = false;
                 
                 if (uAns !== null) {
-                    if (q.type === 'multi' && Array.isArray(uAns) && Array.isArray(q.answer)) {
+                    // Check if question has relative grading
+                    if (q.relativeGrading && typeof q.relativeGrading === 'object') {
+                        // Relative grading: marks based on option selected
+                        const userAnsKey = String(uAns);
+                        marks = parseFloat(q.relativeGrading[userAnsKey] || 0);
+                        isCorrect = marks > 0;
+                    } else if (q.type === 'multi' && Array.isArray(uAns) && Array.isArray(q.answer)) {
                         const allCorrect = uAns.every(v => q.answer.includes(v));
                         const allAnswersSelected = uAns.length === q.answer.length && allCorrect;
                         
                         if (allAnswersSelected) {
-                            marks = parseInt(q.marks || 4);
+                            marks = parseFloat(q.marks || 4);
                             isCorrect = true;
                         } else if (allCorrect && uAns.length > 0) {
                             const correctCount = uAns.length;
                             const totalCorrect = q.answer.length;
-                            marks = parseInt(q.marks || 4) * (correctCount / totalCorrect);
+                            marks = parseFloat(q.marks || 4) * (correctCount / totalCorrect);
                             isCorrect = false;
                         } else {
-                            marks = -parseInt(q.negativeMarks || 1);
+                            marks = -parseFloat(q.negativeMarks || 0);
                             isCorrect = false;
                         }
                     } else if (q.type === 'passage' && Array.isArray(q.questions)) {
                         marks = 0;
                     } else if (uAns == (q.answer ?? q.correct)) {
-                        marks = parseInt(q.marks || 4);
+                        marks = parseFloat(q.marks || 4);
                         isCorrect = true;
                     } else {
-                        marks = -parseInt(q.negativeMarks || 1);
+                        marks = -parseFloat(q.negativeMarks || 0);
                     }
                 }
                 
@@ -745,10 +799,10 @@ window.loadStudentResponses = async function(examId) {
                             <th>Branch</th>
                             <th>Score</th>`;
         
-        // Add column for each question
+        // Add column for each question (Answer + Marks)
         questions.forEach((q, i) => {
             const qText = (q.question || q.text || '').substring(0, 30);
-            html += `<th title="${qText}">Q${i+1}</th>`;
+            html += `<th title="${qText}" colspan="2">Q${i+1}</th>`;
         });
         
         html += `
@@ -756,6 +810,24 @@ window.loadStudentResponses = async function(examId) {
                             <th>Comments</th>
                             <th>Status</th>
                             <th>Actions</th>
+                        </tr>
+                        <tr style="background:#f0f0f0; font-size:0.75rem;">
+                            <th style="position:sticky; left:0; background:#f0f0f0; z-index:2;"></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>`;
+        
+        // Add sub-headers for Answer and Marks
+        questions.forEach(() => {
+            html += `<th>Ans</th><th>Marks</th>`;
+        });
+        
+        html += `
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>`;
@@ -780,10 +852,11 @@ window.loadStudentResponses = async function(examId) {
                     <td style="font-size:0.8rem;">${result.studentBranch || '-'}</td>
                     <td style="font-weight:bold;">${result.score}</td>`;
             
-            // Show each answer
+            // Show each answer and marks
             result.details.forEach((detail, i) => {
                 let answerDisplay = '-';
                 let bgColor = '#fff';
+                const marks = detail.marks || 0;
                 
                 if (detail.userAns !== null && detail.userAns !== undefined) {
                     if (Array.isArray(detail.userAns)) {
@@ -797,14 +870,17 @@ window.loadStudentResponses = async function(examId) {
                         answerDisplay = detail.userAns;
                     }
                     
-                    if (detail.isCorrect) {
+                    if (detail.isCorrect || marks > 0) {
                         bgColor = '#d4edda'; // Green
-                    } else {
-                        bgColor = '#f8d7da'; // Red
+                    } else if (marks < 0) {
+                        bgColor = '#f8d7da'; // Red (negative marks)
+                    } else if (marks === 0 && detail.userAns !== null) {
+                        bgColor = '#fff3cd'; // Yellow (wrong but no negative)
                     }
                 }
                 
-                html += `<td style="background:${bgColor}; text-align:center;">${answerDisplay}</td>`;
+                html += `<td style="background:${bgColor}; text-align:center; border-right:1px solid #e0e0e0;">${answerDisplay}</td>`;
+                html += `<td style="background:${bgColor}; text-align:center; font-weight:bold;">${marks}</td>`;
             });
             
             // Feedback column
@@ -986,9 +1062,10 @@ window.exportToExcel = async function() {
             'Total Score'
         ];
         
-        // Add question headers - just question numbers
+        // Add question headers - answer and marks for each question
         questions.forEach((q, i) => {
-            headers.push(`Q${i+1}`);
+            headers.push(`Q${i+1} Answer`);
+            headers.push(`Q${i+1} Marks`);
         });
         
         headers.push('Qualification Status', 'Result Released', 'Submitted At', 'Feedback Rating', 'Difficulty', 'Comments');
@@ -1005,7 +1082,7 @@ window.exportToExcel = async function() {
                 result.score || 0
             ];
             
-            // Add answers for each question - just show answer with green/red color indicator
+            // Add answers and marks for each question
             result.details.forEach(detail => {
                 let answerDisplay = '-';
                 if (detail.userAns !== null && detail.userAns !== undefined) {
@@ -1021,6 +1098,7 @@ window.exportToExcel = async function() {
                     }
                 }
                 row.push(answerDisplay);
+                row.push(detail.marks || 0);
             });
             
             // Status

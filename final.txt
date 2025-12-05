@@ -1,13 +1,6 @@
 {
   "title": "ENDURO 2025 Qualifier Test",
-  "content": "<div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'><h2 style='margin: 0 0 10px 0; font-size: 2rem;'>Welcome to ENDURO 2025! 🚀</h2><p style='margin: 0; font-size: 1.1rem; opacity: 0.95;'>Python Software Training cum Inner Personality Development Workshop</p></div><div style='background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; border-radius: 6px; margin-bottom: 20px;'><p style='margin: 0; color: #856404;'><strong>📢 Result Announcement:</strong> List of qualified students will be shared in the WhatsApp groups.</p></div><div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 25px;'><div style='background: #e3f2fd; padding: 20px; border-radius: 8px; border-left: 4px solid #2196F3;'><h4 style='margin: 0 0 8px 0; color: #1976D2;'>⏱️ Test Duration</h4><p style='margin: 0; font-size: 1.3rem; font-weight: bold; color: #1565C0;'>30 Minutes</p></div><div style='background: #f3e5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #9C27B0;'><h4 style='margin: 0 0 8px 0; color: #7B1FA2;'>📝 Total Sections</h4><p style='margin: 0; font-size: 1.3rem; font-weight: bold; color: #6A1B9A;'>4 Sections</p></div><div style='background: #e8f5e9; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;'><h4 style='margin: 0 0 8px 0; color: #388E3C;'>✅ Marking Scheme</h4><p style='margin: 0; font-size: 1.1rem; font-weight: bold; color: #2E7D32;'>No Negative Marking</p></div></div><div style='background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 25px;'><h4 style='color: #495057; margin-top: 0;'>📚 Exam Sections</h4><ol style='margin: 10px 0; padding-left: 20px; line-height: 1.8;'><li><strong>Reasoning Ability</strong> - Logical thinking and problem-solving</li><li><strong>Social/Behavioral Quotient</strong> - Interpersonal and emotional intelligence</li><li><strong>Philosophical Quotient</strong> - Deeper understanding of life and values</li><li><strong>Quantitative Aptitude</strong> - Mathematical and analytical skills</li></ol><p style='margin: 10px 0 0 0; color: #6c757d; font-style: italic;'>💡 Each section has specific instructions - read them carefully before answering.</p></div><hr style='border: none; border-top: 2px solid #dee2e6; margin: 30px 0;'><h3 style='color: #dc3545; margin-bottom: 20px;'>⚠️ Critical Exam Rules - Must Read!</h3><div style='background: #fff; border: 2px solid #dc3545; border-radius: 8px; padding: 20px; margin-bottom: 20px;'><h4 style='color: #dc3545; margin-top: 0;'>🚫 Strictly Prohibited</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #495057;'><li><strong>DO NOT</strong> refresh or close the browser tab during the exam</li><li><strong>DO NOT</strong> switch tabs or minimize the screen (may cause auto-submission)</li><li><strong>DO NOT</strong> use calculators, books, mobiles, or any external help</li><li><strong>DO NOT</strong> take screenshots, photos, or record the test screen</li><li><strong>DO NOT</strong> communicate or discuss with anyone during the test</li></ul></div><div style='background: #d1ecf1; border: 2px solid #0c5460; border-radius: 8px; padding: 20px; margin-bottom: 20px;'><h4 style='color: #0c5460; margin-top: 0;'>✔️ Before You Start</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #0c5460;'><li>Ensure you have a <strong>stable internet connection</strong></li><li>Keep your device <strong>fully charged</strong> or plugged in</li><li>Turn off all <strong>notifications and distractions</strong></li><li>Find a <strong>quiet, well-lit place</strong> to take the exam</li><li>Keep <strong>webcam enabled</strong> if required by the platform</li></ul></div><div style='background: #fff3cd; border: 2px solid #856404; border-radius: 8px; padding: 20px; margin-bottom: 20px;'><h4 style='color: #856404; margin-top: 0;'>⚡ During the Exam</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #856404;'><li>You can navigate between questions using the <strong>question palette</strong></li><li>Questions can be <strong>marked for review</strong> and revisited later</li><li>Use <strong>Save & Next</strong> button to save your answer</li><li>Timer will be visible at all times - <strong>manage your time wisely</strong></li><li>Unanswered questions will be marked as <strong>skipped</strong></li><li>Submit the test before time ends - <strong>auto-submission occurs at 00:00</strong></li></ul></div><div style='background: #d4edda; border: 2px solid #155724; border-radius: 8px; padding: 20px;'><h4 style='color: #155724; margin-top: 0;'>🎯 Tips for Success</h4><ul style='margin: 10px 0; padding-left: 20px; line-height: 1.9; color: #155724;'><li>Read each question and all options <strong>carefully</strong></li><li>Attempt easier questions first to <strong>build confidence</strong></li><li>Use the <strong>Mark for Review</strong> feature for difficult questions</li><li>Keep an eye on the <strong>timer</strong> and pace yourself</li><li>Review all marked questions before final submission</li><li>Stay <strong>calm and focused</strong> throughout the exam</li></ul></div><div style='background: #343a40; color: white; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center;'><p style='margin: 0; font-size: 1.1rem;'>📜 <strong>Declaration:</strong> By proceeding, you agree to follow all exam rules and maintain <strong>academic integrity</strong>.</p><p style='margin: 10px 0 0 0; font-size: 0.95rem; opacity: 0.9;'>Violation of any rule may result in disqualification.</p></div><div style='text-align: center; margin-top: 25px; padding: 15px; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); border-radius: 8px;'><p style='margin: 0; color: white; font-size: 1.2rem; font-weight: bold;'>✨ All the Best! We believe in your potential! ✨</p></div>",
-  "banner": "./images/banner.png"
-}
-
-
-
-
-{
+  "duration": 30,
   "sections": [
     {
       "title": "Section 1: Reasoning Ability",
@@ -76,9 +69,12 @@
             "Walk away and avoid the quarrel completely.",
             "Acknowledge your mistake, apologize for unnecessary blame, listen to your friend's feelings, and try to resolve the issue calmly."
           ],
-          "answer": 4-4,2-3,3-2,1-1,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 1,
+            "1": 3,
+            "2": 2,
+            "3": 4
+          }
         },
         {
           "type": "single",
@@ -89,9 +85,12 @@
             "Our government and scientists are trying to find out... after some years we will get better understanding about what changes we should bring so that people can be happy.",
             "There's no use in thinking deeper; problems are just a part of life."
           ],
-          "answer": 1-4,2-3,3-2,4-1,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 4,
+            "1": 3,
+            "2": 2,
+            "3": 1
+          }
         },
         {
           "type": "single",
@@ -103,9 +102,13 @@
             "I feel very sad for these people. I feel there should not be any unhappiness in the world. I'll do social service and help others.",
             "I feel extremely sad seeing them. I want to help them and want to see everyone happy in this world. But I realize that even I am suffering. Why is there suffering in this world? How can we end it? Those will be my contemplations and search."
           ],
-          "answer": 5-4,4-3,3-2,2-1,1-0,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 0,
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4
+          }
         }
       ]
     },
@@ -123,9 +126,13 @@
             "These are bad habits. Even if I have them, I don't want to continue with these bad things.",
             "No one should do these things. We should lead a pure life based on principles."
           ],
-          "answer": 5-4,4-3,3-2,2-1,1-0,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 0,
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4
+          }
         },
         {
           "type": "single",
@@ -136,9 +143,12 @@
             "Does success really bring lasting happiness?",
             "Great, now I can live comfortably and enjoy life."
           ],
-          "answer": 3-4,2-3,4-2,1-1,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 1,
+            "1": 3,
+            "2": 4,
+            "3": 2
+          }
         },
         {
           "type": "single",
@@ -150,9 +160,13 @@
             "I don't know much about God. I think I should read and find what is there.",
             "From my heart there was always a calling to know more about God. I want to read them seriously & understand the message."
           ],
-          "answer": 5-4,4-3,3-2,2-1,1-0,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 0,
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4
+          }
         },
         {
           "type": "single",
@@ -163,9 +177,12 @@
             "Yes, based on person's desires and activities in present life – SOUL gets another body at time of death.",
             "I am not sure; I never thought about it. I am inquisitive to know more."
           ],
-          "answer": 3-4,1-3,4-2,2-1
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 3,
+            "1": 1,
+            "2": 4,
+            "3": 2
+          }
         },
         {
           "type": "single",
@@ -176,9 +193,12 @@
             "Happiness and stress are temporary—I want to rise above both.",
             "If I work harder and stay strong, things will get better."
           ],
-          "answer": 3-4,2-3,4-2,1-1,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 1,
+            "1": 3,
+            "2": 4,
+            "3": 2
+          }
         },
         {
           "type": "single",
@@ -189,9 +209,12 @@
             "I wonder what kind of experience they are having—I'd like to try once.",
             "They're connecting with something higher that gives real peace."
           ],
-          "answer": 4-4,3-3,2-2,1-1,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 1,
+            "1": 2,
+            "2": 3,
+            "3": 4
+          }
         },
         {
           "type": "single",
@@ -202,9 +225,12 @@
             "Such talks are boring; peace is just an illusion anyway.",
             "I'll go, maybe I'll learn something interesting."
           ],
-          "answer": 1-4,4-3,2-2,3-1,
-          "marks": 4,
-          "negativeMarks": 0
+          "relativeGrading": {
+            "0": 4,
+            "1": 2,
+            "2": 1,
+            "3": 3
+          }
         }
       ]
     },
@@ -255,5 +281,3 @@
     }
   ]
 }
-
-
